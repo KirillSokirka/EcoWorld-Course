@@ -1,0 +1,135 @@
+.auth-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(147, 209, 191, 0.45);
+    border-radius: 5px;
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    background-color: #93D1BF;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.modal-content p {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 2em;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 -1,5em 0;
+}
+
+.modal-content .info-input {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    border: 0.25px solid #B6B8BE;
+}
+
+.modal-content input {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.1em;
+    border: 0.25px solid #B6B8BE;
+    color: rgba(126, 120, 120, 1);
+    padding: 0.5em 3em 0.5em 1em;
+    margin-bottom: 1em;
+}
+
+.modal-content input:active {
+    border: 0.25px solid #B6B8BE;
+}
+
+.modal-content button {
+    margin-top: 1em;
+    border: 0;
+    background-color: #93D1BF;
+    font-size: 1.5em;
+    color: white;
+    font-family: 'Comfortaa', sans-serif;
+    cursor: pointer;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 2000px) {
+
+    .modal-content {
+        width: 30em;
+        height: 30em;
+    }
+}
+
+@media screen and (max-width : 1500px) {
+
+    .modal-content {
+        width: 30em;
+        height: 30em;
+    }
+}
+
+@media screen and (max-width : 1000px) {
+
+    .modal-content {
+        width: 30em;
+    }
+}
+
+@media screen and (max-width : 750px) {
+
+    .modal-content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 430px) {
+
+    .modal-content {
+        width: 70%;
+    }
+
+    .modal-content input {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width : 430px) {
+    .modal-content input {
+        font-size: 0.9em;
+    }
+
+    .modal-content button {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width : 340px) {
+    .modal-content p {
+        font-size: 1.75em;
+    }
+}

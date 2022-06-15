@@ -1,0 +1,155 @@
+
+@import url('banner.css');
+@import url('filters.css');
+@import url('footer.css');
+@import url('header.css');
+@import url('annoumcments.css');
+@import url('announcment-info.css');
+@import url('announcment-creation.css');
+@import url('auth.css');
+@import url('mobile-menu-page.css');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer,
+main {
+    padding: 0 6em 0;
+}
+
+header,
+footer {
+    display: flex;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+main {
+    flex: auto;
+    padding-top: 1em;
+}
+
+main hr {
+    background-color: #7E7878;
+    border: none;
+    height: 0.1em;
+}
+
+body {
+    overflow: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+@media screen and (max-width: 2000px) {
+    header,
+    footer,
+    main {
+        padding: 0 14em 0;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+    header,
+    footer,
+    main {
+        padding: 0 12em 0;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    header,
+    footer,
+    main {
+        padding: 0 10em 0;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    header,
+    footer,
+    main {
+        padding: 0 8em 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    header,
+    footer,
+    main {
+        padding: 0 3.5em 0;
+    }
+}
+
+@media screen and (max-width: 900px){
+    main hr {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header,
+    footer,
+    main {
+        padding: 0 3em 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header,
+    footer,
+    main {
+        padding: 0 2em 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header,
+    footer {
+        padding: 0 1em 0;
+    }
+
+    main {
+        padding: 0 1.5em 0;
+        margin-top: 0%;
+    }
+
+    header {
+        margin-bottom: 0%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header,
+    footer {
+        padding: 0 1em 0;
+    }
+
+    main {
+        padding: 0 0 0;
+    }
+}
