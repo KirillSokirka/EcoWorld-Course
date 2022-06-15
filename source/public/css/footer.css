@@ -1,0 +1,33 @@
+.footer {
+    background-color: #E1E1E0;
+    display: flex;
+    align-items: center;
+}
+
+.footer>*:first-child {
+    font-size: 0.8em;
+    align-self: center;
+    text-align: left;
+}
+
+.footer>*:first-child .lower-text {
+    margin-top: -5%;
+}
+
+.footer>*:last-child {
+    text-align: center;
+    font-size: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .footer>*:last-child {
+        font-size: 0.8em;
+    }
+
+    .footer>*:first-child {
+        font-size: 0.6em;
+    }
+}

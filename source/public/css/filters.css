@@ -1,0 +1,990 @@
+.filter-block {
+    background-color: #E7F7EE;
+    margin-top: 0.25em;
+    display: flex;
+    align-items: center;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.filter-block .adress-search {
+    background-color: #F7F7F7;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 1em 1.25em 1em 2.25em;
+}
+
+.filter-block input {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 16px;
+    color: rgba(126, 120, 120, 1);
+    padding: 0.5em 12em 0.5em 0.7em;
+}
+
+.filter-block .more-filters {
+    background-color: rgba(147, 209, 191, 0.3);
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+}
+
+.filter-block .more-filters a {
+    text-decoration: none;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    display: inline;
+    padding-inline-start: 0.7em;
+    padding-inline-end: 0.7em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+.filter-block .filter-wrapper {
+    display: inline-block;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-family: 'Comfortaa', sans-serif;
+    color: rgba(126, 120, 120, 1);
+    background-color: #F7F7F7;
+    margin-right: 2%;
+}
+
+.filter-block .select-btn,
+li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-block .select-btn {
+    padding: 0.5em 0.7em 0.5em;
+    font-size: 15px;
+    background: #fff;
+    border-radius: 2px;
+    align-content: center;
+    display: inline-block;
+    background-color: #F7F7F7;
+    border-radius: 5%;
+}
+
+.filter-block .select-btn i {
+    font-size: 16px;
+    margin-left: 1em;
+    transition: transform 0.3s linear;
+}
+
+.filter-block .filter-wrapper.active .select-btn i {
+    transform: rotate(-180deg);
+}
+
+.filter-block .content {
+    display: none;
+    padding: 0 0.5em 0 0.5em;
+    margin-top: 0.5em;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.filter-block .filter-wrapper.active .content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 15%;
+    z-index: 10;
+}
+
+.filter-block .content .search {
+    margin-top: 0.5em;
+    position: relative;
+}
+
+.filter-block .search i {
+    top: 50%;
+    left: 0.7em;
+    color: #999;
+    font-size: 14px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.filter-block .search input {
+    align-self: center;
+    width: 80%;
+    outline: none;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 0.5em 1em 0.5em 2em;
+    border: 1px solid #B3B3B3;
+}
+
+.filter-block .search input:focus {
+    padding-left: 2em;
+    border: 2px solid #4285f4;
+}
+
+.filter-block .search input::placeholder {
+    color: #bfbfbf;
+}
+
+.filter-block .content .options {
+    margin-top: 1em;
+    max-height: 75px;
+    overflow-y: auto;
+}
+
+.filter-block .options::-webkit-scrollbar {
+    width: 7px;
+}
+
+.filter-block .options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+.filter-block .options::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+.filter-block .options::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+.filter-block .options {
+    margin-left: -2em;
+}
+
+.filter-block .options li {
+    list-style: none;
+    font-size: 14px;
+}
+
+.filter-block .options li:hover,
+li.selected {
+    border-radius: 5px;
+    background: #f2f2f2;
+}
+
+@media screen and (max-width: 1920px) {
+    
+    .filter-block .select-btn {
+        font-size: 1.35em;
+        padding: 0.5em 1em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 80%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 1em;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 1em;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 1.75em;
+        margin-right: 2em;
+
+    }
+
+    .filter-block input {
+        font-size: 1.35em;
+        padding: 0.5em 13em 0.5em 1.5em;
+    }
+
+}
+
+@media screen and (max-width: 1700px) {
+    
+    .filter-block .select-btn {
+        font-size: 1.25em;
+        padding: 0.5em 0.9em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 80%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 1em;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 1em;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 1.25em;
+        margin-right: 1.5em;
+
+    }
+
+    .filter-block input {
+        font-size: 1.25em;
+        padding: 0.5em 11em 0.5em 1em;
+    }
+
+}
+
+
+@media screen and (max-width: 1600px) {
+    
+    .filter-block .select-btn {
+        font-size: 1.25em;
+        padding: 0.5em 0.8em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 1em;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 0.9em;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 1.25em;
+        margin-right: 1.5em;
+
+    }
+
+    .filter-block input {
+        font-size: 1.25em;
+        padding: 0.5em 10em 0.5em 1em;
+    }
+
+}
+
+
+@media screen and (max-width: 1500px) {
+    
+    .filter-block .select-btn {
+        font-size: 1.15em;
+        padding: 0.5em 0.8em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 1em;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 0.9em;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 1em;
+        margin-right: 1.5em;
+
+    }
+
+    .filter-block input {
+        font-size: 1.15em;
+        padding: 0.5em 10em 0.5em 1em;
+    }
+
+}
+
+
+@media screen and (max-width: 1400px) {
+    
+    .filter-block .select-btn {
+        font-size: 1.15em;
+        padding: 0.5em 0.8em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 14px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 0.9em;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 1.5em;
+
+    }
+
+    .filter-block input {
+        font-size: 1.15em;
+        padding: 0.5em 10em 0.5em 1em;
+    }
+
+}
+
+@media screen and (max-width: 1300px) {
+    
+    .filter-block .select-btn {
+        font-size: 1em;
+        padding: 0.5em 0.8em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 14px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 0.9em;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 1.5em;
+
+    }
+
+    .filter-block input {
+        font-size: 16px;
+        padding: 0.5em 12em 0.5em 1em;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    
+    .filter-block .select-btn {
+        font-size: 1em;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 14px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 1.25em;
+    }
+
+    .filter-block input {
+        font-size: 1em;
+        padding: 0.5em 7.5em 0.5em 1em;
+    }
+
+}
+
+@media screen and (max-width: 1120px) {
+    
+    .filter-block .select-btn {
+        font-size: 0.85em;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 1em;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 14px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 2em;
+    }
+
+    .filter-block input {
+        font-size: 0.9em;
+        padding: 0.5em 9em 0.5em 1em;
+    }
+
+}
+
+@media screen and (max-width: 1050px) {
+    
+    .filter-block .select-btn {
+        font-size: 14px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 13.5px;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 14px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+
+    }
+
+    .filter-block input {
+        font-size: 14.5px;
+        padding: 0.5em 9em 0.5em 1em;
+    }
+    
+}
+
+
+@media screen and (max-width: 1050px) {
+    
+    .filter-block .select-btn {
+        font-size: 14px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 13.5px;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 14px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+
+    }
+
+    .filter-block input {
+        font-size: 14.5px;
+        padding: 0.5em 9em 0.5em 1em;
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .filter-block .filter-wrapper {
+        margin-left: 1%;
+    }
+    
+    .filter-block .select-btn {
+        font-size: 14px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 13.5px;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 14px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+
+    }
+
+    .filter-block input {
+        font-size: 14px;
+        padding: 0.5em 9em 0.5em 1em;
+    }
+    
+}
+
+@media screen and (max-width: 950px) {
+    
+    .filter-block .select-btn {
+        font-size: 15px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 13.5px;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 11px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+
+    }
+
+    .filter-block input {
+        font-size: 14px;
+        padding: 0.5em 7em 0.5em 1em;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    
+    .filter-block .select-btn {
+        font-size: 14px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 13.5px;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 12px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+
+    }
+
+    .filter-block input {
+        font-size: 14px;
+        padding: 0.5em 7.5em 0.5em 1em;
+    }
+    
+}
+
+@media screen and (max-width: 850px) {
+    
+    .filter-block .select-btn {
+        font-size: 13px;
+        padding: 0.5em 0.5em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 13.5px;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 12px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+
+    }
+
+    .filter-block input {
+        font-size: 14px;
+        padding: 0.5em 6em 0.5em 0.7em;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    
+    .filter-block .select-btn {
+        font-size: 14px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 13px;
+        width: 60%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 12px;
+        margin-left: 0.2em;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+
+    }
+
+    .filter-block input {
+        font-size: 13px;
+        padding: 0.5em 6em 0.5em 0.7em;
+    }
+    
+}
+
+@media screen and (max-width: 750px) {
+  
+    .filter-block .select-btn {
+        font-size: 12.5px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 12.5px;
+        width: 60%;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.5em;
+
+    }
+
+    .filter-block input {
+        font-size: 12px;
+        padding: 0.5em 5em 0.5em 0.7em;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+  
+    .filter-block .select-btn {
+        font-size: 12.5px;
+        padding: 0.5em 0.7em 0.5em;
+    }
+
+    .filter-block .search input {
+        font-size: 12.5px;
+        width: 60%;
+    }
+
+    .filter-block .content .options li {
+        font-size: 13px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .filter-block input {
+        font-size: 12px;
+        padding: 0.5em 5em 0.5em 0.7em;
+    }
+    
+}
+
+@media screen and (max-width: 675px) {
+ 
+    .filter-block .select-btn {
+        font-size: 12px;
+    }
+
+    .filter-block .search input {
+        font-size: 12px;
+        width: 60%;
+    }
+
+    .filter-block .content .options li {
+        font-size: 11.5px;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .filter-block input {
+        font-size: 12px;
+        padding: 0.5em 3em 0.5em 0.7em;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .filter-block .select-btn {
+        font-size: 10px;
+    }
+
+    .filter-block .search input {
+        font-size: 10px;
+        width: 60%;
+    }
+
+    .filter-block .content .options li {
+        font-size: 10px;
+    }  
+
+    .filter-block .adress-search {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .filter-block input {
+        font-size: 12px;
+        padding: 0.5em 3em 0.5em 0.7em;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+
+    .filter-block .filter-wrapper {
+        margin-right: 1.5%;
+    }
+
+    .filter-block .select-btn i {
+        font-size: 9px;
+        margin-left: 0.2em;
+    }
+    
+    .filter-block .search i {
+        font-size: 10px;
+    }
+
+    .filter-block .content .options {
+        max-height: 70px;
+    }
+
+    .filter-block .options::-webkit-scrollbar {
+        width: 3px;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    .filter-block .more-filters {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .filter-block .filter-wrapper {
+        display: none;
+    }
+
+    .filter-block .adress-search {
+        margin-left: 1.5em;
+        margin-right: 1em;
+    }
+
+    .filter-block input {
+        font-size: 15px;
+        padding: 0.6em 9em 0.6em 1em;
+    }
+
+    .filter-block .more-filters a {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+    }
+
+    .filter-block input {
+        font-size: 15px;
+        padding: 0.6em 8.5em 0.6em 1em;
+    }
+
+    .filter-block .more-filters a {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.9em;
+    }
+
+    .filter-block input {
+        font-size: 15px;
+        padding: 0.6em 6.5em 0.6em 0.7em;
+    }
+
+    .filter-block .more-filters a {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 475px) {
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+    }
+
+    .filter-block input {
+        font-size: 15px;
+        padding: 0.5em 8em 0.5em 0.7em;
+    }
+
+    .filter-block .more-filters a {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .filter-block .adress-search {
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+    }
+
+    .filter-block input {
+        font-size: 15px;
+        padding: 0.5em 6.5em 0.5em 0.7em;
+    }
+
+    .filter-block .more-filters a {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .filter-block input {
+        font-size: 14px;
+        padding: 0.5em 5em 0.5em 0.7em;
+    }
+    
+    .filter-block .adress-search {
+        margin-left: 0.4em;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .filter-block input {
+        font-size: 14px;
+        padding: 0.5em 4em 0.5em 0.7em;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    .filter-block input {
+        font-size: 12px;
+        padding: 0.5em 4.5em 0.5em 0.7em;
+    }
+
+    .filter-block .more-filters a {
+        font-size: 12px;
+    }
+
+    .filter-block .more-filters a {
+        padding-inline-start: 0.7em;
+        padding-inline-end: 0.7em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .filter-block input {
+        font-size: 12px;
+        padding: 0.5em 4em 0.5em 0.7em;
+    }
+
+
+    .filter-block .more-filters a {
+        font-size: 12px;
+    }
+
+    .filter-block .more-filters a {
+        padding-inline-start: 0.6em;
+        padding-inline-end: 0.6em;
+    }
+}
+
+@media screen and (max-width: 250px) {
+
+    .filter-block input {
+        font-size: 10px;
+        padding: 0.5em 2.5em 0.5em 0.7em;
+    }
+
+    .filter-block .more-filters a {
+        font-size: 10px;
+    }
+
+    .filter-block .more-filters a {
+        padding-inline-start: 0.5em;
+        padding-inline-end: 0.5em;
+    }
+}
