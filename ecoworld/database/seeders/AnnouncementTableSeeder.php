@@ -28,7 +28,16 @@ class AnnouncementTableSeeder extends Seeder
             'title' => 'Нумо приберемо вулицю',
             'description' => "Візьміть воду та рукавички з собою",
             'location' => 'м. Васильків, вул Тракторна',
-            'date' => \DateTime::createFromFormat("d.m.Y G:i", "20.06.2022 10:00"),
+            'date' => \DateTime::createFromFormat("d.m.Y G:i", "24.06.2022 9:30"),
+            'created_at' => NOW(),
+            'updated_at' => NOW()
+        ]);
+        \DB::table('announcements')->insert([
+            'author_id' => '1',
+            'title' => 'Зробимо дворик більш чистим',
+            'description' => "Візьміть воду, мішки та рукавички",
+            'location' => 'м. Васильків, вул Декабристів',
+            'date' => \DateTime::createFromFormat("d.m.Y G:i", "21.06.2022 10:40"),
             'created_at' => NOW(),
             'updated_at' => NOW()
         ]);

@@ -20,6 +20,11 @@ class ImagesTableSeeder extends Seeder
             'updated_at' => NOW()
         ]);
         \DB::table('images')->insert([
+            'url' => 'rubbish-images.jpeg',
+            'created_at' => NOW(),
+            'updated_at' => NOW()
+        ]);
+        \DB::table('images')->insert([
             'created_at' => NOW(),
             'updated_at' => NOW()
         ]);

@@ -108,7 +108,7 @@ class AnnouncementRepository implements IAnnouncementRepository
     private function processImages(AnnouncementCreate $item)
     {
         $announcement = Announcement::where('title', '=', $item->title)->first();
-        if (isset($item->images->first)) {
+        if (isset($item->images[0])) {
             foreach ($item->images as $i) {
                 $img = new Image();
                 $filename = $i->getClientOriginalName();

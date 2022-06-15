@@ -5,11 +5,13 @@ const placeAnnouncements = async () => {
 
     let data = [];
     let imageUrl = 'images/'
+    let myAnnouncements = false;
     try {
         if (area.getAttribute('data') !== null) {
             id = area.getAttribute('data');
-            data = await axios.get('public/announcements/user/' + id)
+            data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/user/' + id)
             imageUrl = '../images/'
+            myAnnouncements = true;
         } else {
             data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/')
         }
@@ -21,11 +23,11 @@ const placeAnnouncements = async () => {
     let rows = []
 
     if (window.innerWidth <= 550) {
-        rows = configureAnnouncementsOnScreen(2, data.data.data, imageUrl);
+        rows = configureAnnouncementsOnScreen(2, data.data.data, imageUrl, myAnnouncements);
     } else if (window.innerWidth > 550 && window.innerWidth <= 800) {
-        rows = configureAnnouncementsOnScreen(3, data.data.data, imageUrl);
+        rows = configureAnnouncementsOnScreen(3, data.data.data, imageUrl, myAnnouncements);
     } else {
-        rows = configureAnnouncementsOnScreen(4, data.data.data, imageUrl);
+        rows = configureAnnouncementsOnScreen(4, data.data.data, imageUrl, myAnnouncements);
     }
 
     const elements = area.querySelectorAll(".annoumcment-row");
@@ -41,7 +43,7 @@ const placeAnnouncements = async () => {
     }
 }
 
-function configureAnnouncementsOnScreen(size, announcements, imageUrl) {
+function configureAnnouncementsOnScreen(size, announcements, imageUrl, myAnnouncements) {
     let rows = [];
     let count = 0, rowCount = 0;
     announcements.forEach(item => {
@@ -66,8 +68,18 @@ function configureAnnouncementsOnScreen(size, announcements, imageUrl) {
                                     <p class="title">${item.title}</p>
                                     <p class="location-info">локація: ${item.location}</p>
                                     <p class="date-info">дата: ${item.date}</p>
-                                </div>
-                            </div>`;
+                                </div>`
+            if (myAnnouncements) {
+                rows[rowCount] += `<div class="a__buttons">
+                                        <a class="a__button"
+                                        href="{{ URL::to('announcements/' . $value->id . '/edit') }}">Змінити</a>
+                                        <a class="a__button"
+                                        href="{{ URL::to('announcements/' . $value->id . '/edit') }}">Змінити</a>
+                                   </div>
+                                   </div>`;
+            } else {
+                rows[rowCount] += `</div>`;
+            }
         count++;
 
         if (count === announcements.length) {

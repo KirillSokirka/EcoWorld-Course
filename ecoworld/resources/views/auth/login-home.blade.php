@@ -2,12 +2,12 @@
 
 @section('login-modal')
     <script type="text/javascript">
-       const signInModal = document.querySelector("#signIn-modal");
-       if (signInModal !== null) {
-           signInModal.querySelector(".close").onclick = () => {
-               signInModal.style.display = "none";
+       const loginsignInModal = document.querySelector("#signIn-modal");
+       if (loginsignInModal !== null) {
+           loginsignInModal.querySelector(".close").onclick = () => {
+               loginsignInModal.style.display = "none";
            };
-           signInModal.style.display = 'flex';
+           loginsignInModal.style.display = 'flex';
        }
     </script>
 @endsection

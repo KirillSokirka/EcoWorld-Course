@@ -2,12 +2,12 @@
 
 @section('register-modal')
     <script type="text/javascript">
-        const signUpModal = document.querySelector("#signUp-modal");
-        if (signUpModal !== null) {
-            signUpModal.querySelector(".close").onclick = () => {
-                signUpModal.style.display = "none";
+        const registerSignUpModal = document.querySelector("#signUp-modal");
+        if (registerSignUpModal !== null) {
+            registerSignUpModal.querySelector(".close").onclick = () => {
+                registerSignUpModal.style.display = "none";
             };
-            signUpModal.style.display = 'flex';
+            registerSignUpModal.style.display = 'flex';
         }
     </script>
 @endsection

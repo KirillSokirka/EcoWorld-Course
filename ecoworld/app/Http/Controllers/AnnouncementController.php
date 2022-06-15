@@ -40,13 +40,13 @@ class AnnouncementController extends BaseController
 
     public function show($id) {
         $item = $this->repository->Get($id);
-        return view('show', compact('item'));
+        return view('announcements.show', compact('item'));
     }
 
     public function create()
     {
         if (Auth::check())
-            return view('create');
+            return view('announcements.create');
         else
             return redirect('/');
     }
@@ -82,7 +82,7 @@ class AnnouncementController extends BaseController
             return redirect('/');
         else {
             $id = Auth::id();
-            return view('user_announcement', compact('id'));
+            return view('announcements.byuser', compact('id'));
         }
     }
 }

@@ -15,16 +15,16 @@ class AnnouncementImageTableSeeder extends Seeder
     public function run()
     {
         \DB::table('announcement_image')->insert([
-            'image_id' => '3',
+            'image_id' => '1',
             'announcement_id' => '1',
         ]);
         \DB::table('announcement_image')->insert([
-            'image_id' => '3',
-            'announcement_id' => '1',
-        ]);
-        \DB::table('announcement_image')->insert([
-            'image_id' => '9',
+            'image_id' => '2',
             'announcement_id' => '2',
+        ]);
+        \DB::table('announcement_image')->insert([
+            'image_id' => '3',
+            'announcement_id' => '3',
         ]);
     }
 }
