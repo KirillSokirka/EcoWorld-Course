@@ -9,15 +9,16 @@ use App\Models\Announcement;
 use App\Models\Announcement as AnnouncementAlias;
 use App\Models\Image;
 use App\Repositories\Abstract\IAnnouncementRepository;
+use http\Env\Request;
 
 class AnnouncementRepository implements IAnnouncementRepository
 {
     /**
      * @throws \Spatie\DataTransferObject\Exceptions\UnknownProperties
      */
-    public function GetAll() : array
+    public function GetAll(Request $request) : array
     {
-        $announcements = Announcement::all();
+        $announcements = Announcement::filter($request)->get();
         $announcementsDtos = array();
         foreach ($announcements as $announcement) {
             $images = array();

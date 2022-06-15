@@ -6,6 +6,7 @@ use App\DTOs\AnnouncementCreate;
 use App\Http\Requests\AnnouncementStoreRequest;
 use App\Repositories\Abstract\IAnnouncementRepository;
 use App\Repositories\AnnouncementRepository;
+use http\Env\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +32,7 @@ class AnnouncementController extends BaseController
         $this->repository = $repository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
         return response()->json([
             'data' => $this->repository->GetAll()
