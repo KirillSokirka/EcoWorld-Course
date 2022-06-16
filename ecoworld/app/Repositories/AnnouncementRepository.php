@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\DTOs\AnnouncementCreate;
+use App\DTOs\AnnouncementStore;
 use App\DTOs\AnnouncementHome;
 use App\DTOs\AnnouncementInfo;
 use App\Models\Announcement;
@@ -84,7 +84,7 @@ class AnnouncementRepository implements IAnnouncementRepository
         return $element;
     }
 
-    public function Create(AnnouncementCreate $item)
+    public function Create(AnnouncementStore $item)
     {
         $announcement = new Announcement();
         $announcement->title = $item->title;
@@ -96,9 +96,38 @@ class AnnouncementRepository implements IAnnouncementRepository
         $this->processImages($item);
     }
 
-    public function Update(AnnouncementAlias $item)
+    public function GetForUpdate(int $id) : AnnouncementInfo
     {
-        // TODO: Implement Update() method.
+        $announcement = Announcement::with( 'author')->find($id);
+        $element = null;
+        if (isset($announcement)) {
+            $images = array();
+            foreach ($announcement->images as $image) {
+                $images[] = $image->url;
+            }
+            $element = new AnnouncementInfo(
+                title: $announcement->title,
+                description: $announcement->description,
+                id: $announcement->id,
+                location: $announcement->location,
+                date: date('c', strtotime($announcement->date)),
+                images: $images,
+                likeCount: $announcement->like_count,
+                author: $announcement->author->username
+            );
+        }
+        return $element;
+    }
+
+    public function Update(AnnouncementStore $item)
+    {
+        $announcement = Announcement::find($item->id);
+        $announcement->title = $item->title;
+        $announcement->description = $item->description;
+        $announcement->location = $item->location;
+        $announcement->date = \DateTime::createFromFormat("d.m.Y G:i", $item->date);
+        $announcement->save();
+        $this->processImages($item);
     }
 
     public function Delete(int $id)
@@ -110,7 +139,7 @@ class AnnouncementRepository implements IAnnouncementRepository
         $announcement->delete();
     }
 
-    private function processImages(AnnouncementCreate $item)
+    private function processImages(AnnouncementStore $item)
     {
         $announcement = Announcement::where('title', '=', $item->title)->first();
         if (isset($item->images[0])) {

@@ -39,6 +39,10 @@ Route::get('/announcements/create/', [AnnouncementController::class, 'create'])
     ->name('create.perform');
 Route::post('/announcements/store/', [AnnouncementController::class, 'store'])
     ->name('store.perform');
+Route::get('/announcements/edit/{id}', [AnnouncementController::class, 'edit'])
+    ->name('edit.perform');
+Route::post('/announcements/store/', [AnnouncementController::class, 'editStore'])
+    ->name('edit-store.perform');
 Route::get('/announcements/{id}', [AnnouncementController::class, 'show'])
     ->name('show.perform');
 Route::get('/announcement/by-user', [AnnouncementController::class, 'byUser'])

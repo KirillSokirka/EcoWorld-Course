@@ -72,7 +72,7 @@ function configureAnnouncementsOnScreen(size, announcements, imageUrl, myAnnounc
             if (myAnnouncements) {
                 rows[rowCount] += `<div class="a__buttons">
                                         <a class="a__button"
-                                            href="{{ URL::to('announcements/' . $value->id . '/edit') }}">Змінити
+                                            href="/EcoWorld-Course/ecoworld/public/announcements/edit/${item.id}">Змінити
                                         </a>
                                         <form class="" method="get"
                                             action="/EcoWorld-Course/ecoworld/public/announcements/delete/${item.id}">

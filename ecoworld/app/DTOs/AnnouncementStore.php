@@ -4,7 +4,7 @@ namespace App\DTOs;
 
 use Spatie\DataTransferObject\DataTransferObject;
 
-class AnnouncementCreate extends DataTransferObject
+class AnnouncementStore extends DataTransferObject
 {
     public string $title;
     public string $location;
@@ -12,4 +12,5 @@ class AnnouncementCreate extends DataTransferObject
     public array $images;
     public string $description;
     public int $author_id;
+    public int $id;
 }

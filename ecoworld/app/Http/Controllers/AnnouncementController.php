@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\DTOs\AnnouncementCreate;
-use App\Http\Requests\AnnouncementStoreRequest;
+use App\DTOs\AnnouncementStore;
+use App\Http\Requests\AnnouncementCreateRequest;
+use App\Http\Requests\AnnouncementUpdateRequest;
 use App\Repositories\Abstract\IAnnouncementRepository;
 use App\Repositories\AnnouncementRepository;
 use http\Env\Request;
@@ -55,11 +56,11 @@ class AnnouncementController extends BaseController
     /**
      * @throws \Spatie\DataTransferObject\Exceptions\UnknownProperties
      */
-    public function store(AnnouncementStoreRequest $request)
+    public function store(AnnouncementCreateRequest $request)
     {
         $validated = $request->validated();
         $author_id = Auth::id();
-        $dto = new AnnouncementCreate(
+        $dto = new AnnouncementStore(
             title: $validated['title'],
             description: $validated['description'],
             location: $validated['location'],
@@ -87,9 +88,35 @@ class AnnouncementController extends BaseController
         }
     }
 
+    public function edit($id)
+    {
+        if (Auth::check()) {
+            $item = $this->repository->GetForUpdate($id);
+            return view('announcements.edit', compact('item'));
+        }
+        else
+            return redirect('/');
+    }
+
+    public function editStore(AnnouncementUpdateRequest $request) {
+        $validated = $request->validated();
+        $dto = new AnnouncementStore(
+            id: $validated['id'],
+            title: $validated['title'],
+            description: $validated['description'],
+            location: $validated['location'],
+            date: date('d.m.Y G:i', strtotime($validated['date'])),
+            images: getAllImages($validated),
+        );
+        $this->repository->Update($dto);
+        return redirect('/');
+    }
+
     public function delete($id) {
 
         $this->repository->Delete($id);
         return redirect('/');
     }
+
+
 }
