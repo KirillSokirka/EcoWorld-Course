@@ -221,14 +221,20 @@
     object-fit: cover;
 }
 
-.main .announcement-info-wrapper .buttons.big__screen {
+.main .announcement-info-wrapper .buttons#btn__big__screen {
     margin-top: 1em;
-    margin-left: 0em;
+    margin-left: 0;
 }
 
 .main .announcement-info-wrapper .buttons {
     margin-bottom: 0.5em;
     border: 0;
+}
+
+.main .announcement-info-wrapper .buttons .button__link {
+    text-decoration: none;
+    color: black;
+    width: 100%;
 }
 
 .main .announcement-info-wrapper .buttons .apply__btn {
@@ -240,23 +246,18 @@
     padding: 0.5em;
 }
 
-.main .announcement-info-wrapper .buttons a {
+.main .announcement-info-wrapper .buttons .image__link {
     max-width: 40px;
     max-height: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+    margin-left: 9em;
 }
 
-.main .announcement-info-wrapper .buttons a .like__image {
-    width: 35px;
-    height: 35px;
+.main .announcement-info-wrapper .buttons .image__link .like__image {
+    width: 45px;
+    height: 45px;
 }
 
 @media screen and (max-width: 1920px) {
@@ -290,6 +291,9 @@
     }
     .main .announcement-info-wrapper .big__screen_grid .info__description .desc__content .desc__content__author {
         font-size: 1em;
+    }
+    .main .announcement-info-wrapper .buttons .image__link {
+        margin-left: 0;
     }
 }
 
@@ -377,9 +381,13 @@
         max-width: 50px;
         max-height: 50px;
     }
-    .main .announcement-info-wrapper .buttons a .like__image {
-        width: 45px;
-        height: 45px;
+    .main .announcement-info-wrapper .buttons .image__link .like__image {
+        width: 35px;
+        height: 35px;
+    }
+
+    .main .announcement-info-wrapper .buttons .image__link {
+        margin-left: 9em;
     }
 }
 
@@ -434,9 +442,9 @@
         max-width: 50px;
         max-height: 50px;
     }
-    .main .announcement-info-wrapper .buttons a .like__image {
-        width: 45px;
-        height: 45px;
+    .main .announcement-info-wrapper .buttons .image__link .like__image {
+        width: 35px;
+        height: 35px;
     }
 }
 
@@ -471,7 +479,7 @@
         max-width: 40px;
         max-height: 40px;
     }
-    .main .announcement-info-wrapper .buttons a .like__image {
+    .main .announcement-info-wrapper .buttons .image__link .like__image {
         width: 35px;
         height: 35px;
     }

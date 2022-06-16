@@ -40,6 +40,10 @@
     background-color: rgba(199, 225, 206, 0.75);
 }
 
+.annoumcment-row .annoumcment-block.user {
+    height: 275px;
+}
+
 .annoumcment-block .image-part {
     height: 60%;
     width: 100%;
@@ -67,6 +71,14 @@
     position: absolute;
     margin-top: 0.7em;
     content: url("../images/heart.svg");
+}
+
+.image-part .heart-image-liked {
+    max-width: 25px;
+    max-height: 25px;
+    position: absolute;
+    margin-top: 0.7em;
+    content: url("../images/orange-heart.svg");
 }
 
 .image-part .person-info {
@@ -97,6 +109,11 @@
     height: 40%;
 }
 
+.annoumcment-block.user .info-part {
+    margin-top: 0.2em;
+    height: 35%;
+}
+
 .info-part p {
     margin: 0;
 }
@@ -118,11 +135,40 @@
     font-size: 0.8em;
 }
 
+.annoumcment-block .a__buttons {
+    display: flex;
+    margin-bottom: 0.5em;
+    padding: 0 0.25em;
+}
+
+.annoumcment-block .a__buttons .a__button {
+    background-color: rgba(199, 225, 206, 1);
+    cursor: pointer;
+}
+
+.annoumcment-block .a__buttons a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+.annoumcment-block .a__buttons .a__button button {
+    background-color: rgba(199, 225, 206, 1);
+    border: 0;
+    font-family: 'Comfortaa', sans-serif;
+    cursor: pointer;
+    font-size: 1em;
+}
+
 @media screen and (max-width: 1920px) {
 
     .annoumcment-row .annoumcment-block {
         width: 330px;
         height: 415px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 435px;
     }
 
     .info-part .title {
@@ -144,7 +190,6 @@
     .annoumcments-area .show-more-btn {
         font-size: 1.2em;
     }
-
 }
 
 @media screen and (max-width: 1675px) {
@@ -152,6 +197,10 @@
     .annoumcment-row .annoumcment-block {
         width: 290px;
         height: 375px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 400px;
     }
 
     .info-part .title {
@@ -182,6 +231,10 @@
         height: 360px;
     }
 
+    .annoumcment-row .annoumcment-block.user {
+        height: 385px;
+    }
+
     .info-part .title {
         font-size: 1.3em;
     }
@@ -210,6 +263,10 @@
     .annoumcment-row .annoumcment-block {
         width: 255px;
         height: 340px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 365px;
     }
 
     .info-part .title {
@@ -256,6 +313,10 @@
         height: 320px;
     }
 
+    .annoumcment-row .annoumcment-block.user {
+        height: 350px;
+    }
+
     .info-part .title {
         font-size: 1.2em;
     }
@@ -276,6 +337,10 @@
         height: 305px;
     }
 
+    .annoumcment-row .annoumcment-block.user {
+        height: 330px;
+    }
+
     .info-part .title {
         font-size: 1.1em;
     }
@@ -294,6 +359,10 @@
     .annoumcment-row .annoumcment-block {
         width: 205px;
         height: 290px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 315px;
     }
 
     .info-part .title {
@@ -318,6 +387,10 @@
     .annoumcment-row .annoumcment-block {
         width: 210px;
         height: 295px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 310px;
     }
 
     .info-part .title {
@@ -360,6 +433,10 @@
         height: 310px;
     }
 
+    .annoumcment-row .annoumcment-block.user {
+        height: 335px;
+    }
+
     .info-part .title {
         font-size: 1.1em;
     }
@@ -400,6 +477,10 @@
         height: 285px;
     }
 
+    .annoumcment-row .annoumcment-block.user {
+        height: 305px;
+    }
+
     .info-part .title {
         font-size: 1em;
     }
@@ -419,6 +500,10 @@
         height: 270px;
     }
 
+    .annoumcment-row .annoumcment-block.user {
+        height: 295px;
+    }
+
     .info-part .title {
         font-size: 1em;
     }
@@ -430,12 +515,24 @@
     .info-part .date-info {
         font-size: 0.82em;
     }
+
+    .annoumcment-block .a__buttons a {
+        font-size: 1em;
+    }
+
+    .annoumcment-block .a__buttons .a__button button {
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 550px) {
     .annoumcment-row .annoumcment-block {
         width: 215px;
         height: 305px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 330px;
     }
 
     .info-part .title {
@@ -457,6 +554,10 @@
         height: 305px;
     }
 
+    .annoumcment-row .annoumcment-block.user {
+        height: 330px;
+    }
+
     .info-part .title {
         font-size: 1.1em;
     }
@@ -472,12 +573,24 @@
     .annoumcments-area .show-more-btn {
         font-size: 1em;
     }
+
+    .annoumcment-block .a__buttons a {
+        font-size: 0.95em;
+    }
+
+    .annoumcment-block .a__buttons .a__button button {
+        font-size: 0.95em;
+    }
 }
 
 @media screen and (max-width: 450px) {
     .annoumcment-row .annoumcment-block {
         width: 190px;
         height: 285px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 310px;
     }
 
     .info-part .title {
@@ -514,12 +627,24 @@
     .annoumcments-area {
         padding: 0 0.5em 0.3em;
     }
+
+    .annoumcment-block .a__buttons a {
+        font-size: 0.85em;
+    }
+
+    .annoumcment-block .a__buttons .a__button button {
+        font-size: 0.85em;
+    }
 }
 
 @media screen and (max-width: 360px) {
     .annoumcment-row .annoumcment-block {
         width: 160px;
         height: 260px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 295px;
     }
 
     .info-part .title {
@@ -539,5 +664,17 @@
     .annoumcment-row .annoumcment-block {
         width: 150px;
         height: 250px;
+    }
+
+    .annoumcment-row .annoumcment-block.user {
+        height: 275px;
+    }
+
+    .annoumcment-block .a__buttons a {
+        font-size: 0.8em;
+    }
+
+    .annoumcment-block .a__buttons .a__button button {
+        font-size: 0.8em;
     }
 }

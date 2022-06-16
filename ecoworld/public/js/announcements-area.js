@@ -12,8 +12,6 @@ const placeAnnouncements = async () => {
             data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/user/' + id)
             imageUrl = '../images/'
             myAnnouncements = true;
-        } else if (area.getAttribute('filter_uri') !== null) {
-            data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/')
         } else {
             data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/')
         }
@@ -56,11 +54,11 @@ function configureAnnouncementsOnScreen(size, announcements, imageUrl, myAnnounc
             rows[rowCount] += "</div>";
             rows[++rowCount] = "<div class='annoumcment-row'>";
         }
-        rows[rowCount] += ` <div class="annoumcment-block">
+        rows[rowCount] += ` <div class="annoumcment-block ${myAnnouncements ? 'user' : ''}">
                                 <div class="image-part">
                                     <a href='announcements/${item.id}' >
                                     <img src='${imageUrl + item.images[0]}'></a>
-                                    <img class="heart-image">
+                                    <img class="heart-image${item.liked ? '-liked' : ''}">
                                     <div class="person-info">
                                         <p>${item.likeCount}</p>
                                         <img class="person-image">
@@ -76,10 +74,12 @@ function configureAnnouncementsOnScreen(size, announcements, imageUrl, myAnnounc
                                         <a class="a__button"
                                             href="/EcoWorld-Course/ecoworld/public/announcements/edit/${item.id}">Змінити
                                         </a>
-                                        <form class="" method="get"
-                                            action="/EcoWorld-Course/ecoworld/public/announcements/delete/${item.id}">
-                                            <button type="submit">Видалити</button>
-                                        </form>
+                                        <div class="a__button">
+                                            <form class="" method="get"
+                                             action="/EcoWorld-Course/ecoworld/public/announcements/delete/${item.id}">
+                                                <button type="submit">Видалити</button>
+                                            </form>
+                                        </div>
                                    </div>
                                    </div>`;
             } else {

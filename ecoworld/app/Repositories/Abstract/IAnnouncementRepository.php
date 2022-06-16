@@ -2,16 +2,17 @@
 
 namespace App\Repositories\Abstract;
 
-use App\DTOs\AnnouncementStore;
+use App\DTOs\AnnouncementCreate;
+use App\DTOs\AnnouncementEdit;
 use App\DTOs\AnnouncementInfo;
-use Illuminate\Http\Request;
 
 interface IAnnouncementRepository
 {
-    public function GetAll(Request $request) : array;
+    public function GetAll(?int $user_id) : array;
     public function Get(int $id) : AnnouncementInfo;
     public function GetUserAnnouncement(int $user_id) : array;
-    public function Create(AnnouncementStore $item);
-    public function Update(AnnouncementStore $item);
+    public function Create(AnnouncementCreate $item);
+    public function Update(AnnouncementEdit $item);
     public function Delete(int $id);
+    public function AddVisitor(int $announcement_id, int $user_id);
 }

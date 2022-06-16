@@ -28,20 +28,20 @@ bigdescHeader.addEventListener('click', () => {
     }
 })
 
-const big_scren_buttons = document.querySelector("#btn__big_screen");
+const big_scren__buttons = document.querySelector("#btn__big__screen");
 const small_screen_buttons = document.querySelector("#btn__small_screen");
 const desc__big_screen = document.querySelector("#desc__big_screen");
 const desc__small_screen = document.querySelector("#desc__small_screen");
 
 function initial_resize() {
     if (window.window.innerWidth <= 900) {
-        big_scren_buttons.style.display = 'none'
+        big_scren__buttons.style.display = 'none'
         small_screen_buttons.style.display = 'flex'
         desc__big_screen.style.display = 'none'
         desc__small_screen.style.display = 'block'
     } else {
         small_screen_buttons.style.display = 'none'
-        big_scren_buttons.style.display = 'flex'
+        big_scren__buttons.style.display = 'flex'
         desc__big_screen.style.display = 'block'
         desc__small_screen.style.display = 'none'
     }

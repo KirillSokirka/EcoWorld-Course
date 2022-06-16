@@ -4,13 +4,12 @@ namespace App\DTOs;
 
 use Spatie\DataTransferObject\DataTransferObject;
 
-class AnnouncementHome extends DataTransferObject
+class AnnouncementEdit extends DataTransferObject
 {
-    public int $id;
     public string $title;
     public string $location;
     public string $date;
     public array $images;
-    public int $likeCount;
-    public bool $liked = false;
+    public string $description;
+    public int $id;
 }

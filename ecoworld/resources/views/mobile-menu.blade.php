@@ -15,8 +15,7 @@
         <div class="links-area">
             @auth
                 <a type='button' href="{{ route('create.perform') }}" class="link">Створити</a>
-                <a type='button' class="link" {{ route('user-announcement.perform') }}>Мої оголошення</a>
-                <a type='button' class="link">Вподобані</a>
+                <a type='button' class="link" href="{{ route('user-announcement.perform') }}">Мої оголошення</a>
                 <a type='button' href="{{ route('logout.perform') }}" class="link">Вийти</a>
             @elseguest
                 <a type='button' class="link" id="signIn-btn">Увійти</a>

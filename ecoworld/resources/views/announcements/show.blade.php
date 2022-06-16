@@ -27,9 +27,12 @@
             <p class="info__text" id="people">{{$item->likeCount}} небайдужих</p>
         </div>
 
-        <div class="buttons" id="btn__big_screen">
-            <button class="apply__btn">Відгукнутися</button>
-            <a type="button"><img class="like__image" src="../images/heart.svg"></a>
+        <div class="buttons" id="btn__big__screen">
+            <a class="button__link" href="/EcoWorld-Course/ecoworld/public/announcements/addvisitor/{{$item->id}}">
+                <button class="apply__btn">Відгукнутися</button>
+            </a>
+            <a class="image__link" href="/EcoWorld-Course/ecoworld/public/announcements/addlike/{{$item->id}}"
+               type="button"><img class="like__image" src="../images/heart.svg"></a>
         </div>
     </div>
 
@@ -79,8 +82,11 @@
     </div>
 
     <div class="buttons"  id="btn__small_screen">
-        <button class="apply__btn">Відгукнутися</button>
-        <a type="button"><img class="like__image" src="../images/heart.svg"></a>
+        <a class="button__link" href="/EcoWorld-Course/ecoworld/public/announcements/addvisitor/{{$item->id}}">
+            <button class="apply__btn">Відгукнутися</button>
+        </a>
+        <a class="image__link" href="/EcoWorld-Course/ecoworld/public/announcements/addlike/{{$item->id}}"
+           type="button"><img class="like__image" src="../images/heart.svg"></a>
     </div>
 
 </div>

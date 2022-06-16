@@ -41,6 +41,9 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->bind(\App\Repositories\Abstract\IAnnouncementRepository::class,
+    \App\Repositories\AnnouncementRepository::class);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

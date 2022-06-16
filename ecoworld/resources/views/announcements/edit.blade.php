@@ -26,8 +26,7 @@
 
         <div class="form__group field">
             <textarea type="input" class="form__field big" placeholder="Опис оголошення" required
-                      name="description" id="description" value="{{ $item->description }}">
-            </textarea>
+                      name="description" id="description">{{ $item->description }}</textarea>
             <label for="name" class="form__label">Опис оголошення</label>
         </div>
 
@@ -43,8 +42,8 @@
         </div>
 
         <div class="form__group field file">
-
-            <input type="file" class="file__field" name="images[]" multiple/>
+            <input type="file" class="file__field" name="images[]"
+                   data-multiple-caption="{count} files selected" multiple/>
             <label for="file" class="file__label" >Завантажте фото сміття</label>
         </div>
 

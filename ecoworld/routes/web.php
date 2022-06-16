@@ -32,18 +32,19 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 Route::get('/', function () { return view('home'); })->name('home.perform');
 Route::get('/mobile', function () { return view('mobile-menu'); });
 Route::get('/announcements', [AnnouncementController::class, 'index']);
-Route::get('/announcements/filters/', [AnnouncementController::class, 'indexWithFilter'])
-    ->name("filters.perform");
+Route::get('/announcements/addvisitor/{id}', [AnnouncementController::class, 'add_visitor']);
+Route::get('/announcements/addlike/{id}', [AnnouncementController::class, 'add_like']);
+
 Route::get('/announcements/delete/{id}', [AnnouncementController::class, 'delete'])
     ->name('delete.perform');
 Route::get('/announcements/user/{id}', [AnnouncementController::class, 'user_announcements']);
 Route::get('/announcements/create/', [AnnouncementController::class, 'create'])
     ->name('create.perform');
-Route::post('/announcements/store/', [AnnouncementController::class, 'store'])
+Route::post('/announcements/create-store/', [AnnouncementController::class, 'store'])
     ->name('store.perform');
 Route::get('/announcements/edit/{id}', [AnnouncementController::class, 'edit'])
     ->name('edit.perform');
-Route::post('/announcements/store/', [AnnouncementController::class, 'editStore'])
+Route::post('/announcements/edit-store/', [AnnouncementController::class, 'editStore'])
     ->name('edit-store.perform');
 Route::get('/announcements/{id}', [AnnouncementController::class, 'show'])
     ->name('show.perform');

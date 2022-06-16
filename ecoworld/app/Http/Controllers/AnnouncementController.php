@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\DTOs\AnnouncementStore;
+use App\DTOs\AnnouncementCreate;
+use App\DTOs\AnnouncementEdit;
 use App\Http\Requests\AnnouncementCreateRequest;
 use App\Http\Requests\AnnouncementUpdateRequest;
 use App\Repositories\Abstract\IAnnouncementRepository;
-use App\Repositories\AnnouncementRepository;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,24 +27,22 @@ class AnnouncementController extends BaseController
 {
     private IAnnouncementRepository $repository;
 
-    public function __construct(AnnouncementRepository $repository)
+    public function __construct(IAnnouncementRepository $repository)
     {
         $this->repository = $repository;
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        return response()->json([
-            'data' => $this->repository->GetAll($request)
-        ]);
-    }
-
-    public function indexWithFilter(Request $request)
-    {
-        return response()->json([
-            'data' => $this->repository->GetAll($request),
-            'uri' => ''
-        ]);
+        if (Auth::check()) {
+            return response()->json([
+                'data' => $this->repository->GetAll(Auth::id())
+            ]);
+        } else {
+            return response()->json([
+                'data' => $this->repository->GetAll(null)
+            ]);
+        }
     }
 
     public function show($id) {
@@ -68,7 +65,7 @@ class AnnouncementController extends BaseController
     {
         $validated = $request->validated();
         $author_id = Auth::id();
-        $dto = new AnnouncementStore(
+        $dto = new AnnouncementCreate(
             title: $validated['title'],
             description: $validated['description'],
             location: $validated['location'],
@@ -108,7 +105,7 @@ class AnnouncementController extends BaseController
 
     public function editStore(AnnouncementUpdateRequest $request) {
         $validated = $request->validated();
-        $dto = new AnnouncementStore(
+        $dto = new AnnouncementEdit(
             id: $validated['id'],
             title: $validated['title'],
             description: $validated['description'],
@@ -121,10 +118,23 @@ class AnnouncementController extends BaseController
     }
 
     public function delete($id) {
-
         $this->repository->Delete($id);
         return redirect('/');
     }
 
+    public function add_visitor($id) {
+        if (Auth::check()) {
+            $user_id = Auth::id();
+            $this->repository->AddVisitor($id, $user_id);
+        }
+        return redirect('/');
+    }
 
+    public function add_like($id) {
+        if (Auth::check()) {
+            $user_id = Auth::id();
+            $this->repository->AddLike($id, $user_id);
+        }
+        return redirect('/');
+    }
 }
