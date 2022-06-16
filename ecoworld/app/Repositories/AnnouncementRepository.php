@@ -103,7 +103,11 @@ class AnnouncementRepository implements IAnnouncementRepository
 
     public function Delete(int $id)
     {
-        // TODO: Implement Delete() method.
+        $announcement = Announcement::find($id);
+        foreach ($announcement->images as $img) {
+            $announcement->images()->detach($img);
+        }
+        $announcement->delete();
     }
 
     private function processImages(AnnouncementCreate $item)

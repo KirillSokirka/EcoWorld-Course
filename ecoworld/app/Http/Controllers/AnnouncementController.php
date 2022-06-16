@@ -86,4 +86,10 @@ class AnnouncementController extends BaseController
             return view('announcements.byuser', compact('id'));
         }
     }
+
+    public function delete($id) {
+
+        $this->repository->Delete($id);
+        return redirect('/');
+    }
 }

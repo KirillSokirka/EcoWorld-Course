@@ -32,6 +32,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 Route::get('/', function () { return view('home'); })->name('home.perform');
 Route::get('/mobile', function () { return view('mobile-menu'); });
 Route::get('/announcements', [AnnouncementController::class, 'index']);
+Route::get('/announcements/delete/{id}', [AnnouncementController::class, 'delete'])
+    ->name('delete.perform');
 Route::get('/announcements/user/{id}', [AnnouncementController::class, 'user_announcements']);
 Route::get('/announcements/create/', [AnnouncementController::class, 'create'])
     ->name('create.perform');
