@@ -56,7 +56,8 @@ function configureAnnouncementsOnScreen(size, announcements, imageUrl, myAnnounc
         }
         rows[rowCount] += ` <div class="annoumcment-block ${myAnnouncements ? 'user' : ''}">
                                 <div class="image-part">
-                                    <a href='announcements/${item.id}' >
+                                    <a href='${myAnnouncements ? '/EcoWorld-Course/ecoworld/public/announcements'
+                                                                : 'announcements'}/${item.id}' >
                                     <img src='${imageUrl + item.images[0]}'></a>
                                     <img class="heart-image${item.liked ? '-liked' : ''}">
                                     <div class="person-info">

@@ -74,7 +74,7 @@
                     {{$item->description}}
                 </div>
                 <div class="desc__content__author">
-                    Автор оголошення: Олена
+                    Автор оголошення: {{$item->author}}
                 </div>
             </div>
             <hr class="hr" />
