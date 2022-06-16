@@ -4,8 +4,7 @@ namespace App\Repositories\Abstract;
 
 use App\DTOs\AnnouncementStore;
 use App\DTOs\AnnouncementInfo;
-use App\Models\Announcement;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 interface IAnnouncementRepository
 {

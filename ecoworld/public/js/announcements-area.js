@@ -7,11 +7,13 @@ const placeAnnouncements = async () => {
     let imageUrl = 'images/'
     let myAnnouncements = false;
     try {
-        if (area.getAttribute('data') !== null) {
+        if (area.getAttribute('data') !== 'none') {
             id = area.getAttribute('data');
             data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/user/' + id)
             imageUrl = '../images/'
             myAnnouncements = true;
+        } else if (area.getAttribute('filter_uri') !== null) {
+            data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/')
         } else {
             data = await axios.get('/EcoWorld-Course/ecoworld/public/announcements/')
         }

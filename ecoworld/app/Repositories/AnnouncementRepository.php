@@ -6,10 +6,9 @@ use App\DTOs\AnnouncementStore;
 use App\DTOs\AnnouncementHome;
 use App\DTOs\AnnouncementInfo;
 use App\Models\Announcement;
-use App\Models\Announcement as AnnouncementAlias;
 use App\Models\Image;
 use App\Repositories\Abstract\IAnnouncementRepository;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 class AnnouncementRepository implements IAnnouncementRepository
 {

@@ -7,7 +7,7 @@ use App\Http\Requests\AnnouncementCreateRequest;
 use App\Http\Requests\AnnouncementUpdateRequest;
 use App\Repositories\Abstract\IAnnouncementRepository;
 use App\Repositories\AnnouncementRepository;
-use http\Env\Request;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,7 +36,15 @@ class AnnouncementController extends BaseController
     public function index(Request $request)
     {
         return response()->json([
-            'data' => $this->repository->GetAll()
+            'data' => $this->repository->GetAll($request)
+        ]);
+    }
+
+    public function indexWithFilter(Request $request)
+    {
+        return response()->json([
+            'data' => $this->repository->GetAll($request),
+            'uri' => ''
         ]);
     }
 
